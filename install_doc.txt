@@ -1,0 +1,11 @@
+1.server running com.lb.mysession.server.Main
+Conf.properties configure port timeout
+2 client log4j-1.2.15.jar my_session.jar netty-all-4.0.17.Final.jar into the my_session.jar below lib Tomcat by TomcatSessionExt package
+Context.xml below conf to modify the Tomcat below
+<Valve className=&quot; com.lb.session.ext.MySessionHandlerValve&quot; / >
+<Manager className=&quot; com.lb.session.ext.MySessionManager&quot;
+Serverlist=&quot; 127.0.0.1:9091&quot;
+WebName=&quot; Wifi&quot;
+>
+Serverlist is a dynamic node 127.0.0.1:9091; 127.0.0.1:9092
+WebName is a web application name

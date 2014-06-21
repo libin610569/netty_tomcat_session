@@ -1,0 +1,15 @@
+﻿1.server 运行 com.lb.mysession.server.Main
+         conf.properties 配置端口 超时时间
+		 
+		 
+2 client 把 log4j-1.2.15.jar my_session.jar netty-all-4.0.17.Final.jar 放入tomcat 的lib下面   my_session.jar 由TomcatSessionExt打包
+         修改tomcat 下面的 conf 下面 context.xml
+		  
+		   <Valve className="com.lb.session.ext.MySessionHandlerValve" />
+ 
+			<Manager className="com.lb.session.ext.MySessionManager"
+					 serverlist="127.0.0.1:9091"
+					 webName="Wifi"
+					 />  
+		    serverlist 是动态节点  127.0.0.1:9091;127.0.0.1:9092
+			webName 是web应用名
